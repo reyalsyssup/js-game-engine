@@ -1,6 +1,6 @@
 class Scene {
     // bgColor will be in rgb (may use regex later on for hex)
-    constructor(_canvas, _width, _height, _bgColor) {
+    constructor(_canvas, _width, _height) {
         this.canvas = _canvas;
         this.ctx = canvas.getContext("2d");
 
@@ -9,7 +9,7 @@ class Scene {
         this.canvas.width = this.width;
         this.canvas.height = this.height;
 
-        this.bgColor = _bgColor;
+        this.bgColor = "rgb(255, 255, 255)";
     }
 
     // Draws the background colour as this.bgColor and if border is true adds a 5px border
@@ -22,4 +22,6 @@ class Scene {
             this.ctx.strokeRect(0, 0, this.width, this.height);
         }
     }
+
+    getContext() { return this.ctx; }
 }
