@@ -7,7 +7,6 @@ window.addEventListener("keydown", event => {
     // Prevents duplication of keys in keylog
     let counter = 0;
     let alreadyIn = false;
-    console.log("before", keyLog);
     for(let i = 0; i < keyLog.length; i++) {
         if(keyLog[i] === keyDown) counter++;
         if(counter > 0) {
@@ -15,7 +14,6 @@ window.addEventListener("keydown", event => {
             break;
         }
     }
-    console.log("after", keyLog);
     if(!alreadyIn) keyLog.push(keyDown);
 });
 
