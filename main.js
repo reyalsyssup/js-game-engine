@@ -19,3 +19,5 @@ function draw() {
         if(key === "s") person.y += 2;
     }
 }
+
+scene.run(setup, draw);
