@@ -11,9 +11,11 @@ function draw() {
     scene.clear(false);
     person.draw();
 
-    let keyDown = getKeyDown();
-    if(keyDown === "d") person.x += 2;
-    if(keyDown === "a") person.x -= 2;
-    if(keyDown === "w") person.y -= 2;
-    if(keyDown === "s") person.y += 2;
+    let keys = getKeyDown();
+    for(let key of keys) {
+        if(key === "d") person.x += 2;
+        if(key === "a") person.x -= 2;
+        if(key === "w") person.y -= 2;
+        if(key === "s") person.y += 2;
+    }
 }
