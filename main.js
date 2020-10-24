@@ -10,5 +10,10 @@ function setup() {
 function draw() {
     scene.clear(false);
     person.draw();
-    person.x += 1;
+
+    let keyDown = getKeyDown()
+    if(keyDown === "d") person.x += 2
+    if(keyDown === "a") person.x -= 2
+    if(keyDown === "w") person.y -= 2
+    if(keyDown === "s") person.y += 2
 }
