@@ -1,11 +1,8 @@
 class Sprite {
     constructor(_scene, _path, _x, _y) {
         this.path = "./res/" + _path;
-        // create an <img> tag on the html THAT IS HIDDEN for the ctx.drawImage
-        let img = document.createElement("img");
-        img.style.display = "none";
+        let img = new Image();
         img.src = this.path;
-        document.querySelector("body").appendChild(img);
         this.img = img;
 
         this.x = _x;
