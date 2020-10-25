@@ -2,6 +2,18 @@ let keyDown;
 let requested = false;
 let keyLog = [];
 
+let mouse = {x: 0, y: 0};
+
+function setMouse(event) {
+    let rect = canvas.getBoundingClientRect();
+    mouse = {
+        x: event.clientX - rect.left,
+        y: event.clientY - rect.top
+    };
+}
+
+window.addEventListener("mousemove", event => setMouse(event));
+
 window.addEventListener("keydown", event => {
     keyDown = event.key;
     // Prevents duplication of keys in keylog
