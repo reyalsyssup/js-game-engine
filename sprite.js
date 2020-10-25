@@ -1,5 +1,9 @@
 class Sprite {
     constructor(_scene, _path, _x, _y, _type) {
+        if(typeof _path !== "string") throw new Error("Property \"_path\" must be of type string");
+        if(typeof _x !== "number") throw new Error("Property \"_x\" must be of type number");
+        if(typeof _y !== "number") throw new Error("Property \"_y\" must be of type number");
+        if(typeof _type !== "string") throw new Error("Property \"_type\" must be of type string");
         this.path = "./res/" + _path;
         let img = new Image();
         if (_path.length > 0) {
