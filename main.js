@@ -14,9 +14,9 @@ function draw() {
     circle2.draw();
 
     let keys = getKeyDown();
-    circle2.x = mouse.x;
-    circle2.y = mouse.y;
-    // console.log("circles", Sprite.checkCollide(circle1, circle2));
+    circle2.x = mouse.x - circle2.radius;
+    circle2.y = mouse.y - circle2.radius;
+    console.log("circles", Sprite.checkCollide(circle1, circle2));
     for(let key of keys) {
         if(key === "d") circle1.x += 2;
         if(key === "a") circle1.x -= 2;
