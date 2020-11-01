@@ -100,7 +100,7 @@ class Sprite {
         this.x = _x;
         this.y = _y;
         this.type = _type;
-        this.ctx = _scene.getContext();
+        this.ctx = _scene.getContext("2d");
     }
 
     // This will assume the is either a sprite, or a rect
@@ -120,4 +120,30 @@ class Sprite {
     draw() {
         this.ctx.drawImage(this.img, this.x, this.y);
     }
+}
+
+class Text {
+    constructor(_scene) {
+        this.scene = _scene;
+        this.ctx = this.scene.getContext("2d");
+    }
+
+    draw(text, x, y, font, size, textAlign, color) {
+        this.ctx.fillStyle = color;
+        this.ctx.font = `${size}px ${font}`;
+        this.ctx.textAlign = textAlign;
+        this.ctx.fillText(text, x, y);
+    }
+}
+
+function drawButton(x1, y1, width, height, bgColor, text, textColor, size) {
+    let ctx = document.querySelector("canvas").getContext("2d");
+    ctx.fillStyle = bgColor;
+    ctx.fillRect(x1, y1, width, height);
+
+    ctx.fillStyle = textColor;
+    ctx.font = `${size}px Arial`;
+
+    let textWidth = ctx.measureText(text).width;
+    ctx.fillText(text, x1 + textWidth/2 + (width - textWidth)/2, y1 + size + (height - size)/2 - 5);
 }
